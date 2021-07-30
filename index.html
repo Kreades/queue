@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Ivelum Queue</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/index-dev.css">
+		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.png">
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+		<div class="sideBar">
+			<a href="#" class="sideBar__burger"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-burger"></use></svg></a>
+			<a href="#" class="sideBar__logo"><img src="./images/logo.svg" class="sideBar__logo-source" alt=""></a>
+			<a href="#" class="sideBar__account"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-account"></use></svg></a>
+			<div class="sideBar__menu">
+				<a href="#" class="sideBar__menuItem"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-menu-1"></use></svg></a>
+				<a href="#" class="sideBar__menuItem sideBar__menuItem--active"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-menu-2"></use></svg></a>
+				<a href="#" class="sideBar__menuItem"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-menu-3"></use></svg></a>
+				<a href="#" class="sideBar__menuItem"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-menu-4"></use></svg></a>
+				<a href="#" class="sideBar__menuItem"><svg class="icon"><use xlink:href="images/icons-sprite.svg#icon-menu-5"></use></svg></a>
+			</div>
+		</div>
+		
+		<div class="app">
+
+			<!-- Header -->
+			<div class="header">
+				<!-- Seat & Timer -->
+				<div class="seatBlock">
+					<div class="seatBlock__number">Место <span class="seatBlock__numberValue">#15</span></div>
+					<div class="seatBlock__flow">
+						<span class="seatBlock__timer" id="seatTimer">00:00:00</span>
+						<a href="#" class="seatBlock__switch seatBlock__switch--stop js-seat-timer-toggle">Перерыв</a>
+					</div>
+				</div>
+				<!-- Account -->
+				<div class="header__account">
+					<a href="#" class="accountNotify"><svg class="icon accountNotify__icon"><use xlink:href="images/icons-sprite.svg#icon-notify"></use></svg></a>
+					<a href="#" class="accountLink">
+						<img src="./images/avatar.jpg" class="accountLink__avatar" alt="">
+						<span class="accountLink__name">Manager</span>
+						<svg class="icon accountLink__arrow"><use xlink:href="images/icons-sprite.svg#icon-arrow-down"></use></svg>
+					</a>
+				</div>
+			</div>
+		
+			<div class="queueTitle app__mt-40-60"><span class="queueTitle__badge js-queue-counter">5</span>в очереди</div>
+			<!-- Queue List -->
+			<div class="queueList app__mt-20-30">
+				<!-- #1 -->
+				<div id="client-a231" class="queueList__item">
+					<div class="queueList__number queueList__number--green">A231</div>
+					<div class="queueList__service">Кредит под залог недвижимости <span class="queueList__avTime">~ 22 мин</span></div>
+					<div class="queueList__action">
+						<span class="queueList__priority">Нормальный</span>
+						<a href="#" class="button js-call-client"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-bell"></use></svg>Вызвать клиента</a>
+					</div>
+				</div>
+				<!-- #2 -->
+				<div id="client-b110" class="queueList__item">
+					<div class="queueList__number queueList__number--purple">В110</div>
+					<div class="queueList__service">Выдача документов <span class="queueList__avTime">~ 3 мин</span></div>
+					<div class="queueList__action">
+						<span class="queueList__priority">Нормальный</span>
+						<a href="#" class="button js-call-client"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-bell"></use></svg>Вызвать клиента</a>
+					</div>
+				</div>
+				<!-- #3 -->
+				<div id="client-c674" class="queueList__item">
+					<div class="queueList__number queueList__number--red">С674</div>
+					<div class="queueList__service">Открытие счета <span class="queueList__avTime">~ 14 мин</span></div>
+					<div class="queueList__action">
+						<span class="queueList__priority queueList__priority--medium">Средний</span>
+						<a href="#" class="button js-call-client"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-bell"></use></svg>Вызвать клиента</a>
+					</div>
+				</div>
+				<!-- #4 -->
+				<div id="client-e198" class="queueList__item">
+					<div class="queueList__number queueList__number--yellow">E198</div>
+					<div class="queueList__service">Банковское обслуживание <span class="queueList__avTime">~ 26 мин</span></div>
+					<div class="queueList__action">
+						<span class="queueList__priority queueList__priority--low">Низкий</span>
+						<a href="#" class="button js-call-client"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-bell"></use></svg>Вызвать клиента</a>
+					</div>
+				</div>
+				<!-- #5 -->
+				<div id="client-a230" class="queueList__item">
+					<div class="queueList__number queueList__number--green">A230</div>
+					<div class="queueList__service">Кредит наличными <span class="queueList__avTime">~ 8 мин</span></div>
+					<div class="queueList__action">
+						<span class="queueList__priority queueList__priority--hight">Высокий</span>
+						<a href="#" class="button js-call-client"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-bell"></use></svg>Вызвать клиента</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="queueTitle app__mt-40-60"><span class="queueTitle__badge js-queue-complete-counter">1</span>обслужено</div>
+			<!-- Complete List -->
+			<div class="queueList js-queue-complete-list app__mt-20-30">
+				<!-- #1 -->
+				<div class="queueList__item queueList__item--complete">
+					<div class="queueList__number queueList__number--green">A231</div>
+					<div class="queueList__service">Кредит под залог недвижимости <span class="queueList__avTime">~ 22 мин</span></div>
+					<div class="queueList__action">
+						<div class="queueList__time">
+							<span class="queueList__clock">16 мин.</span>
+							<span>21.07.2021 – 13:41</span>
+						</div>
+						<div class="accountLink queueList__account">
+							<img src="./images/avatar.jpg" class="accountLink__avatar" alt="">
+							<span class="accountLink__name">Manager</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<!-- Service Modal -->
+		<div class="serviceModal">
+			<div class="serviceModal__body">Интерфейс обслуживания клиента</div>
+			<div class="serviceModal__panel">
+				<span class="serviceModal__clock">00:00</span>
+				<a href="#" class="button button--light button--one-icon serviceModal__more"><svg class="icon button__icon-more"><use xlink:href="images/icons-sprite.svg#icon-more"></use></svg></a>
+				<a href="#" class="button js-complete"><svg class="icon button__icon"><use xlink:href="images/icons-sprite.svg#icon-ok"></use></svg>Завершить</a>
+			</div>
+		</div>
+		
+		<script src="./libs/jquery-3.6.0.min.js"></script>
+		<script src="./libs/gsap.min.js"></script>
+		<script src="./libs/scroll-lock.min.js"></script>
+		<script src="./libs/timer.jquery.min.js"></script>
+		<script src="./js/app.js"></script>
+	</body>
+</html>

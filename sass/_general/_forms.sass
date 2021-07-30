@@ -1,0 +1,50 @@
+
+/* Form Group */
+
+.formGroup
+	position: relative
+
+	& + &
+		margin-top: 15px
+
+/* Buttons */
+
+.button
+	-webkit-appearance: none
+	margin: 0
+	cursor: pointer
+	line-height: inherit
+	font-size: 14px
+	font-weight: normal
+	font-family: inherit
+	display: flex
+	text-decoration: none
+	align-items: center
+	justify-content: center
+	color: $white-color
+	background-color: $blue-color
+	border: 0
+	border-radius: 8px
+	padding: 10px 20px
+	+tr(background-color 0.4s)
+	&:hover
+		background-color: $blue-dark-color
+
+	&--green
+		background-color: $green-color
+		&:hover
+			background-color: $green-dark-color
+
+	&--light
+		background-color: $button-light-color
+		color: $gray-color
+		&:hover
+			background-color: $gray-color
+			color: $white-color
+
+	&__icon:not(&--one-icon)
+		margin-right: 10px
+
+	&--one-icon
+		min-height: 45px
+		padding: 10px 16px

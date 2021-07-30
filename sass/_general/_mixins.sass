@@ -1,0 +1,33 @@
+
+/* Transitions */
+
+@mixin tr($transitions...)
+	$unfoldedTransitions: ()
+	@each $transition in $transitions
+		$unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma)
+	-webkit-transition: $unfoldedTransitions
+	transition: $unfoldedTransitions
+
+@function unfoldTransition ($transition)
+	$property: all
+	$duration: .3s
+	$easing: cubic-bezier(0,0.5,0.5,1)
+	$delay: null
+	$defaultProperties: ($property, $duration, $easing, $delay)
+	$unfoldedTransition: ()
+	@for $i from 1 through length($defaultProperties)
+		$p: null
+		@if $i <= length($transition)
+			$p: nth($transition, $i)
+		@else
+			$p: nth($defaultProperties, $i)
+		$unfoldedTransition: append($unfoldedTransition, $p)
+	@return $unfoldedTransition
+
+/* Media Queries */
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $grid-breakpoints)
+	@if map-has-key($mq-breakpoints, $mq-breakpoint)
+		$mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint)
+	@media screen and (min-width: #{$mq-breakpoint})
+		@content

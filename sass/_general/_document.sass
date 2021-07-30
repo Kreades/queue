@@ -1,0 +1,50 @@
+html
+	min-height: 100%
+	min-height: -webkit-fill-available
+	display: flex
+	flex-direction: column
+
+body
+	display: flex
+	flex-direction: column
+	flex-grow: 1
+	-webkit-font-smoothing: antialiased
+	background: $body-background-color
+
+::-moz-selection
+	background-color: $blue-color
+	color: $white-color
+
+::selection
+	background-color: $blue-color
+	color: $white-color
+
+::-webkit-selection
+	background-color: $blue-color
+	color: $white-color
+
+.icon
+	display: inline-block
+	width: 16px
+	height: 16px
+	stroke-width: 0
+	stroke: currentColor
+	fill: currentColor
+
+.img-fluid
+	max-width: 100%
+	height: auto
+
+a
+	+tr(color 0.4s)
+
+p
+
+	& + p
+		margin-top: 20px
+
+h1, h2, h3, h4, h5
+	font-family: inherit
+	font-style: normal
+	font-weight: normal
+	color: inherit
